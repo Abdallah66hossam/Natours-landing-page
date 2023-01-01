@@ -1,8 +1,8 @@
 // colors
 
-$light-green: rgb(126, 213, 111, 0.5);
+$light-green: rgb(126, 213, 111, 0.6);
 $medium-green: #55c57a;
-$dark-green: rgb(40, 180, 133, 0.5);
+$dark-green: rgb(40, 180, 133, 0.6);
 
 $color-white: #fff;
 $grey-dark: #777;
@@ -19,6 +19,6 @@ html {
 body {
   font-family: "Lato", sans-serif;
   color: $color-white;
-  margin: 0 2rem;
+  margin: 2rem;
   font-weight: 400;
 }

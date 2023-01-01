@@ -18,19 +18,20 @@
   .__text-box {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 40%;
     transform: translate(-50%, -50%);
     text-align: center;
+    text-transform: uppercase;
     .heading span {
-      font-size: 7rem;
-      letter-spacing: 1rem;
+      font-size: 6rem;
+      letter-spacing: 1.4rem;
       padding: 0.7rem 0;
       display: block;
       font-weight: 300;
       &:last-child {
-        font-size: 2rem;
+        font-size: 1.6rem;
         font-weight: 700;
-        letter-spacing: 0.4rem;
+        letter-spacing: 0.6rem;
       }
     }
   }
