@@ -1,0 +1,8 @@
+.nav {
+  position: absolute;
+  z-index: 1;
+  padding: 2rem 4rem;
+  & .__logo {
+    height: 5rem;
+  }
+}
