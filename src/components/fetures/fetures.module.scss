@@ -1,0 +1,25 @@
+@use "../../main.scss" as color;
+
+.skew {
+  background: linear-gradient(
+      to bottom right,
+      color.$light-green,
+      color.$dark-green
+    ),
+    url("../../assets/imgs/nat-4.jpg");
+  background-size: cover;
+  background-position: top;
+  height: 70rem;
+  transform: skewY(-7deg);
+  position: relative;
+  & .fetures {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: skewY(7deg) translate(-50%, -50%);
+  }
+}

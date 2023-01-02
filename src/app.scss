@@ -1,0 +1,5 @@
+@use "./main" as color;
+
+.app {
+  background-color: color.$grey-light;
+}
