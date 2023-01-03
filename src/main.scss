@@ -4,10 +4,33 @@ $light-green: rgb(126, 213, 111, 0.6);
 $medium-green: #55c57a;
 $dark-green: rgb(40, 180, 133, 0.6);
 
+$color-secondary-light: rgba(255, 187, 0, 0.8);
+$color-secondary-dark: rgba(255, 120, 48, 0.8);
+
+$color-tertiary-light: rgba(41, 152, 255, 0.8);
+$color-tertiary-dark: rgba(84, 66, 250, 0.8);
+
 $color-white: #fff;
 $grey-dark: #777;
 $grey-light: #f7f7f7;
 $color-black: #000;
+
+// mixins
+@mixin heading {
+  background: linear-gradient(to right, $light-green, $dark-green);
+  letter-spacing: 0.2rem;
+  transition: 200ms;
+  text-align: center;
+  font-size: 3rem;
+  text-transform: uppercase;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  &:hover {
+    transform: skew(15deg, 2deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgb(0 0 0 / 20%);
+  }
+}
 
 * {
   margin: 0;
