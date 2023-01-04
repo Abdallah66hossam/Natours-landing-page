@@ -4,6 +4,7 @@ import "./app.scss";
 import Fetures from "./components/fetures/Fetures";
 import Tours from "./components/tours/Tours";
 import Stories from "./components/stories/Stories";
+import Contact from "./components/form/Contact";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Fetures />
       <Tours />
       <Stories />
+      <Contact />
     </div>
   );
 }

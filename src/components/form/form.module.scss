@@ -1,0 +1,81 @@
+@use "../../main.scss" as color;
+
+.contact {
+  width: 56%;
+  height: 100%;
+  color: color.$grey-dark;
+  padding: 3rem 5rem;
+  & h2 {
+    @include color.heading;
+    padding: 3rem 0;
+  }
+  & form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 3rem;
+    & > input {
+      border: none;
+      border-bottom: 3px solid transparent;
+      padding: 1.2rem 0rem 1.2rem 1em;
+      width: 75%;
+      margin: 1rem 0;
+      font-weight: 700;
+      font-family: inherit;
+      color: rgba(color.$grey-dark, 0.8);
+      font-size: 1.2rem;
+      font-family: inherit;
+      letter-spacing: 0.1rem;
+      transition: 0.3s;
+      border-radius: 2px;
+      &:focus {
+        outline: none;
+      }
+      &.inValid {
+        color: color.$color-white;
+        background-color: rgba(255, 65, 65, 0.159);
+      }
+      &.inValid::placeholder {
+        color: color.$color-white;
+      }
+    }
+
+    & .radio {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-left: 1rem;
+      margin-top: 3rem;
+
+      width: 100%;
+      & input {
+        display: none;
+      }
+      & label {
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+      & span {
+        cursor: pointer;
+        height: 1.3rem;
+        width: 1.3rem;
+        border-radius: 50%;
+        outline-offset: 2.5px;
+        outline: 0.4rem solid color.$medium-green;
+        margin-right: 2rem;
+      }
+      & span:nth-child(5) {
+        margin-left: 3rem;
+      }
+      & .circle {
+        background-color: color.$medium-green;
+      }
+    }
+    & .err {
+      color: orangered;
+    }
+    & .errTrans {
+      color: transparent;
+    }
+  }
+}
