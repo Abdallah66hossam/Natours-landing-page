@@ -5,6 +5,7 @@ import Fetures from "./components/fetures/Fetures";
 import Tours from "./components/tours/Tours";
 import Stories from "./components/stories/Stories";
 import Contact from "./components/form/Contact";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Tours />
       <Stories />
       <Contact />
+      <Footer />
     </div>
   );
 }
