@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import style from "./form.module.scss";
 import Button from "../../components/UI/Button";
 
@@ -12,9 +12,6 @@ const Form = () => {
   const [emailIsValid, setEmailIsValid] = useState(false);
   const [checked, setIsChecked] = useState(false);
   const [err, setErr] = useState(false);
-
-  const dot = document.getElementById("foo");
-  console.log(dot);
 
   // taking the inputs from user
   const handelName = (e) => {
