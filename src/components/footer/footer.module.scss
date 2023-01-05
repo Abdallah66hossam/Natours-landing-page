@@ -25,16 +25,18 @@ footer {
       list-style-type: none;
       width: 100%;
       padding: 1rem 0;
-      & li {
+      & li a {
         font-size: 1.5rem;
         padding: 0.2rem;
         text-transform: uppercase;
         padding: 0.4rem;
         transition: 0.2s;
         transform: skewY(0);
+        text-decoration: none;
+        color: #777;
+        display: inline-block;
         &:hover {
-          transform: scale(1.05);
-
+          transform: rotate(15deg) scale(1.05);
           background-color: #333;
           color: #55c57a;
         }

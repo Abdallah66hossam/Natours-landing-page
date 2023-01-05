@@ -8,11 +8,21 @@ const Footer = () => {
       <img src={footerImg} alt="logo" />
       <div className={style.flex}>
         <ul className={style.links}>
-          <li>company</li>
-          <li>contact us</li>
-          <li>carrers</li>
-          <li>privacy policy</li>
-          <li>terms</li>
+          <li>
+            <a href="#company">company</a>
+          </li>
+          <li>
+            <a href="#contact us">contact us</a>
+          </li>
+          <li>
+            <a href="#carrers">carrers</a>
+          </li>
+          <li>
+            <a href="#privacy policy">privacy policy</a>
+          </li>
+          <li>
+            <a href="#terms">terms</a>
+          </li>
         </ul>
         <p className={style.copy_right}>
           Built by JONAS SCHMEDTMANN for his online course ADVANCED CSS AND

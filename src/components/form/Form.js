@@ -4,8 +4,6 @@ import Button from "../../components/UI/Button";
 
 const Form = () => {
   // radio buttons
-  const [cheecked1, setChecked1] = useState(false);
-  const [cheecked2, setChecked2] = useState(false);
   // taking the inputs from user
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -43,8 +41,6 @@ const Form = () => {
       setName("");
       setEmail("");
       setErr(false);
-      setChecked1(false);
-      setChecked2(false);
     } else {
       setErr(true);
     }
@@ -73,30 +69,16 @@ const Form = () => {
           className={err && !emailIsValid && style.inValid}
         />
         <p className={err && !emailIsValid ? style.err : style.errTrans}>
-          Enter valid e-mail
+          Enter a valid e-mail!
         </p>
 
         <div className={style.radio}>
           <input type="radio" name="tour" id="small" />
-          <span
-            className={cheecked1 && style.circle}
-            onClick={() => {
-              setChecked1(!cheecked1);
-            }}
-          ></span>
-          <label htmlFor="small" onClick={() => setChecked1(!cheecked1)}>
-            Small tour group
-          </label>
+          <span></span>
+          <label htmlFor="small">Small tour group</label>
           <input type="radio" name="tour" id="Large" />
-          <span
-            className={cheecked2 && style.circle}
-            onClick={() => {
-              setChecked2(!cheecked2);
-            }}
-          ></span>
-          <label htmlFor="Large" onClick={() => setChecked2(!cheecked2)}>
-            Large tour group
-          </label>
+          <span></span>
+          <label htmlFor="Large">Large tour group</label>
         </div>
 
         <Button type="submit">Next step</Button>
