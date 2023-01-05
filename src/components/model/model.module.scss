@@ -1,0 +1,78 @@
+@use "../../main.scss" as heading;
+
+.background {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  cursor: pointer;
+}
+.model {
+  display: grid;
+  grid-template-columns: 40% 50%;
+  gap: 4%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 70vh;
+  width: 80%;
+  background-color: white;
+  z-index: 10000000;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  & .close {
+    position: absolute;
+    right: 4rem;
+    top: 4rem;
+    color: #777;
+    font-size: 3rem;
+    transition: 0.2s;
+    &:hover {
+      color: #55c57a;
+      cursor: pointer;
+    }
+  }
+  & .imgs {
+    display: flex;
+    flex-direction: column;
+    & img {
+      height: 29rem;
+      object-fit: cover;
+    }
+  }
+  & .text {
+    padding: 6rem 3rem 0 0;
+    line-height: 1.7;
+    & h2 {
+      @include heading.heading;
+    }
+    & h3 {
+      font-size: 2rem;
+    }
+    & .details {
+      display: flex;
+
+      & p {
+        margin-top: 2rem;
+        font-size: 1.3rem;
+        &:first-child {
+          border-right: 0.1rem solid #ddd;
+          margin-right: 4.2rem;
+          padding-right: 2.1rem;
+          height: fit-content;
+        }
+      }
+      & + * {
+        position: absolute;
+        bottom: 3.6rem;
+        background-color: #55c57a;
+        color: white;
+      }
+    }
+  }
+}

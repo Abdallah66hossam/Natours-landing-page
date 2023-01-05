@@ -13,7 +13,7 @@ const NavBar = () => {
     <div className={style.nav}>
       <img src={logo} alt="logo" className={style.logo} />
       <AiOutlineBars className={style.bars} onClick={handelNavBar} />
-      <nav className={navIsShown && style.translate}>
+      <nav className={navIsShown ? style.translate : ""}>
         <IoIosCloseCircle className={style.close} onClick={handelNavBar} />
         <ul>
           <li>

@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import ToursCart from "../UI/ToursCart";
 import style from "./tours.module.scss";
 import img1 from "../../assets/imgs/nat-5.jpg";
 import img2 from "../../assets/imgs/nat-6.jpg";
 import img3 from "../../assets/imgs/nat-7.jpg";
 import Button from "../UI/Button";
+import Model from "../model/Model";
 
 const data = [
   {
@@ -47,11 +48,16 @@ const data = [
     background: `linear-gradient(to right bottom , rgba(41, 152, 255, 0.6),rgba(84, 66, 250, 0.6))`,
   },
 ];
-// ['3 day tours','Up to 30 people','Sleep in cozy hotels','Difficulty: easy']
 
 const Tours = () => {
+  const [isShownModal, setIsShownModal] = useState(false);
+  const handelModel = () => {
+    setIsShownModal(!isShownModal);
+  };
+
   return (
     <div className={style.tours}>
+      {isShownModal && <Model isShown={handelModel} />}
       <div className={style.center}>
         <h2>MOST POPULAR TOURS</h2>
       </div>
@@ -92,7 +98,7 @@ const Tours = () => {
                   <p>only</p>
                   <p>${cart.price}</p>
                 </div>
-                <Button>Book Now</Button>
+                <Button onClick={handelModel}>Book Now</Button>
               </div>
             </section>
           </ToursCart>
