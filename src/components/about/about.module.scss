@@ -1,53 +1,60 @@
 @use "../../main" as color;
+@use "../../responsive/media" as query;
 
 .about {
   color: black;
-  width: 80%;
+  width: 90%;
   margin: 15rem auto;
   .center {
     text-align: center;
     margin-bottom: 4rem;
     & .heading {
-      background: linear-gradient(
-        to right,
-        color.$light-green,
-        color.$dark-green
-      );
-      letter-spacing: 0.2rem;
-      transition: 200ms;
-      text-align: center;
-      font-size: 3rem;
-      text-transform: uppercase;
-      background-clip: text;
-      color: transparent;
-      display: inline-block;
-      &:hover {
-        transform: skew(15deg, 2deg) scale(1.1);
-        text-shadow: 0.5rem 1rem 2rem rgb(0 0 0 / 20%);
+      @include color.heading;
+      @include query.respond(tab) {
+        font-size: 2rem;
+      }
+      @include query.respond(phone) {
+        font-size: 1.5rem;
       }
     }
   }
 
   .par__about {
-    display: grid;
-    grid-template-columns: 40% 50%;
-    gap: 10%;
-    justify-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    @include query.respond(tab) {
+      flex-direction: column;
+    }
+    @include query.respond(phone) {
+      font-size: 1.5rem;
+    }
     .details {
       padding-top: 7rem;
       &__text {
         color: color.$grey-dark;
-
         & h3 {
           font-size: 1.7rem;
           margin-bottom: 1.5rem;
           text-transform: uppercase;
           letter-spacing: 0.1rem;
+          @include query.respond(desktop) {
+            font-size: 1.5rem;
+          }
+          @include query.respond(phone) {
+            font-size: 1.1rem;
+          }
         }
         & p {
           font-size: 1.4rem;
           line-height: 1.3;
           margin-bottom: 3rem;
+          @include query.respond(desktop) {
+            font-size: 1.2rem;
+          }
+          @include query.respond(phone) {
+            font-size: 0.9rem;
+          }
         }
       }
       & .learn_more {
@@ -74,6 +81,14 @@
         & .arrow {
           padding-top: 0.3rem;
           font-size: 1.8rem;
+          @include query.respond(phone) {
+            font-size: 1.4rem;
+            padding-top: 0.2rem;
+          }
+        }
+        @include query.respond(phone) {
+          font-size: 1.2rem;
+          padding: 0.5rem 0.1rem;
         }
       }
     }
@@ -91,18 +106,33 @@
         outline-offset: 0.6rem;
         max-width: 30rem;
         margin: 0 1rem;
+        @include query.respond(desktop) {
+          max-width: 20rem;
+        }
+        @include query.respond(phone) {
+          max-width: 14rem;
+        }
       }
       .img__flex {
         display: flex;
         & img:last-child {
           position: relative;
           top: 4.2rem;
+          @include query.respond(desktop) {
+            top: 2rem;
+          }
+          @include query.respond(phone) {
+            top: -2rem;
+          }
         }
       }
       & > img:last-child {
         position: relative;
         top: -8rem;
         z-index: 25;
+        @include query.respond(phone) {
+          top: -6rem;
+        }
       }
       & img:hover {
         transform: scale(1.1);
@@ -110,6 +140,9 @@
         box-shadow: rgba(0, 0, 0, 0.5) 0 3.5rem 6rem -1rem;
         outline: 1.2rem solid color.$medium-green;
         border-radius: 0.8rem;
+        @include query.respond(tab) {
+          outline: 0.8rem solid color.$medium-green;
+        }
       }
     }
   }
