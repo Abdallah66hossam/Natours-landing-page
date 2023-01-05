@@ -1,4 +1,6 @@
 @use "../../main.scss" as color;
+@use "../../responsive/media.scss" as query;
+
 .stories {
   position: relative;
   margin-top: 14rem;
@@ -18,11 +20,19 @@
     @include color.heading;
     top: 8rem;
     width: 100%;
+    @include query.respond(tab) {
+      font-size: 2.3rem;
+    }
+    @include query.respond(phone) {
+      font-size: 1.7rem;
+    }
   }
   & .article {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
     height: 100%;
     gap: 14rem;
     position: absolute;
@@ -30,9 +40,12 @@
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 12;
+    width: 100%;
     & .story {
+      position: relative;
+      margin: 0 auto;
       cursor: pointer;
-      width: 100%;
+      width: 60%;
       background-color: rgba(255, 255, 255, 0.8);
       border-radius: 3px;
       font-size: 1.6rem;
@@ -42,7 +55,19 @@
       display: flex;
       align-items: center;
       box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-
+      @include query.respond(desktop) {
+        width: 70%;
+      }
+      @include query.respond(tab) {
+        transform: skewX(0deg);
+        height: 26rem;
+        width: 80%;
+      }
+      @include query.respond(phone) {
+        transform: skewX(0deg);
+        height: 26rem;
+        width: 90%;
+      }
       & figure {
         & img {
           width: 14rem;
@@ -51,6 +76,20 @@
           margin-right: 2rem;
           transform: skewX(12deg) scale(1);
           transition: 0.3s;
+          @include query.respond(tab) {
+            transform: skewX(0deg);
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            width: 10rem;
+            height: 10rem;
+          }
+          @include query.respond(phone) {
+            top: 4rem;
+            left: 1rem;
+            width: 8rem;
+            height: 8rem;
+          }
         }
 
         & figcaption {
@@ -60,6 +99,10 @@
           transition: 0.3s;
           text-transform: uppercase;
           font-size: 1.4rem;
+          @include query.respond(tab) {
+            font-size: 1.1rem;
+            transform: skewX(12deg) translate(0rem, 0rem);
+          }
         }
       }
       & .text {
@@ -67,10 +110,35 @@
           font-size: 1.5rem;
           text-transform: uppercase;
           padding-bottom: 1.7rem;
+          @include query.respond(tab) {
+            position: absolute;
+            top: 3rem;
+            right: 2rem;
+            font-size: 1.4rem;
+            width: 70%;
+          }
+          @include query.respond(phone) {
+            position: absolute;
+            top: 6rem;
+            right: 1rem;
+            font-size: 1.4rem;
+            width: 60%;
+          }
         }
         & p {
           font-size: 1.4rem;
           line-height: 1.5;
+          @include query.respond(tab) {
+            position: absolute;
+            bottom: 4rem;
+            left: 3rem;
+            font-size: 1.1rem;
+          }
+          @include query.respond(phone) {
+            bottom: 3rem;
+            left: 1rem;
+            font-size: 1rem;
+          }
         }
       }
       &:hover {
@@ -78,10 +146,17 @@
           & img {
             transform: scale(0.93) skewX(12deg);
             filter: blur(0.15rem);
+            @include query.respond(tab) {
+              transform: skewX(0deg);
+            }
           }
           & figcaption {
             color: white;
             transform: skewX(12deg) translate(1rem, -8rem);
+            @include query.respond(tab) {
+              transform: skewX(12deg) translate(0rem, -6rem);
+              font-size: 1.1rem;
+            }
           }
         }
       }
