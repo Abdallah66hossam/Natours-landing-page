@@ -1,15 +1,21 @@
 @use "../../main" as color;
+@use "../../responsive/media" as query;
 
 .tours {
   margin-top: 30rem;
   color: color.$grey-dark;
-  height: 80rem;
   position: relative;
   & .center {
     text-align: center;
     margin-bottom: 9rem;
     & h2 {
       @include color.heading;
+      @include query.respond(tab) {
+        font-size: 2.2rem;
+      }
+      @include query.respond(phone) {
+        font-size: 1.7rem;
+      }
     }
   }
 }
@@ -18,14 +24,28 @@
   justify-content: center;
   align-items: center;
   gap: 7%;
-
+  height: auto;
+  @include query.respond(desktop) {
+    gap: 3%;
+  }
+  @include query.respond(tab) {
+    gap: 4rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+  }
   & .toggle {
     position: relative;
     width: 22%;
     height: 50rem;
     perspective: 150rem;
-
     cursor: pointer;
+    @include query.respond(desktop) {
+      width: 30%;
+    }
+    @include query.respond(desktop) {
+      width: 60%;
+    }
     & .cart_front,
     .cart_back {
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -58,6 +78,11 @@
           top: 13rem;
           right: 1rem;
           width: 100%;
+
+          @include query.respond(phone) {
+            font-size: 1.5rem;
+          }
+
           & span {
             padding: 0.3rem;
           }
@@ -70,11 +95,16 @@
         list-style-type: none;
         line-height: 4rem;
         margin-top: 2rem;
-        & li:not(:last-child) {
+        & li {
           font-size: 1.3rem;
           width: 60%;
           text-align: center;
-          border-bottom: 1px solid rgb(228, 228, 228);
+          &:not(:last-child) {
+            border-bottom: 1px solid rgb(228, 228, 228);
+          }
+          @include query.respond(phone) {
+            font-size: 1rem;
+          }
         }
       }
     }
