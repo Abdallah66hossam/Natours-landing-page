@@ -38,7 +38,7 @@ const Fetures = () => {
     <div className={style.skew}>
       <div className={style.fetures}>
         {data.map((cart) => (
-          <FetureCart>
+          <FetureCart key={Math.random()}>
             {cart.icon}
             <h4>{cart.title}</h4>
             <p>{cart.detaile}</p>

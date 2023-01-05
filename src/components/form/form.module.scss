@@ -30,11 +30,12 @@
       border-radius: 2px;
       &:focus {
         outline: none;
+        border-bottom: 3px solid color.$medium-green;
       }
       &.inValid {
         color: color.$color-white;
         background-color: rgba(255, 65, 65, 0.159);
-        box-shadow: rgb(255, 103, 103) 0px 1px 7px 1px;
+        border-bottom: 3px solid red;
       }
       &.inValid::placeholder {
         color: color.$color-white;
@@ -67,6 +68,12 @@
         outline-offset: 2.5px;
         outline: 0.4rem solid color.$medium-green;
         margin-right: 2rem;
+        &.notChecked {
+          outline: 0.4rem solid orangered;
+        }
+        &.checked {
+          outline: 0.4rem solid color.$medium-green;
+        }
       }
       & span:nth-child(5) {
         margin-left: 3rem;

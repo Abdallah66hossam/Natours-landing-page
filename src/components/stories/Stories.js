@@ -27,7 +27,7 @@ const Stories = () => {
           </div>
 
           {data.map((story) => (
-            <section className={style.story}>
+            <section className={style.story} key={Math.random()}>
               <figure>
                 <img src={story.img} alt="human" />
                 <figcaption>{story.name}</figcaption>
