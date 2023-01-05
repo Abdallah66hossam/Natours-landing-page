@@ -1,4 +1,5 @@
 @use "../../main.scss" as color;
+@use "../../responsive/media.scss" as query;
 
 .cart {
   background-color: rgba(247, 247, 247, 0.7);
@@ -13,6 +14,17 @@
   &:hover {
     transform: scale(1.05);
     cursor: pointer;
+  }
+  @include query.respond(desktop) {
+    padding: 5.5rem 2rem;
+  }
+  @include query.respond(tab) {
+    padding: 4rem 1.8rem;
+    width: 70%;
+  }
+  @include query.respond(phone) {
+    padding: 4rem 1.8rem;
+    width: 80%;
   }
   & > :first-child {
     color: color.$medium-green;

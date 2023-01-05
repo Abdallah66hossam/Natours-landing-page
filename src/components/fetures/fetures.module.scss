@@ -1,4 +1,5 @@
 @use "../../main.scss" as color;
+@use "../../responsive/media.scss" as query;
 
 .skew {
   background: linear-gradient(
@@ -12,14 +13,35 @@
   height: 70rem;
   transform: skewY(-7deg);
   position: relative;
+  @include query.respond(tab) {
+    transform: skewY(0deg);
+    height: auto;
+  }
   & .fetures {
     display: flex;
     align-items: center;
     gap: 4rem;
-    width: 80%;
     position: absolute;
     left: 50%;
-    top: 60%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
     transform: skewY(7deg) translate(-50%, -50%);
+    @include query.respond(desktop) {
+      width: 90%;
+      gap: 2rem;
+    }
+    @include query.respond(tab) {
+      width: 100% !important;
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      flex-wrap: wrap;
+      align-content: center;
+      padding: 6rem 0;
+      position: relative;
+      transform: skewY(0);
+      left: 0;
+    }
   }
 }
