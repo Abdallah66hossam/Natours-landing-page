@@ -72,28 +72,26 @@ const Form = () => {
         </p>
 
         <div className={style.radio}>
-          <input
-            type="radio"
-            name="tour"
-            id="small"
-            onChange={(e) => setIsChecked(e.target.checked)}
-          />
-          <span
-            id="foo"
-            className={err && !checked ? style.notChecked : ""}
-          ></span>
-          <label htmlFor="small">Small tour group</label>
-          <input
-            type="radio"
-            name="tour"
-            id="Large"
-            onChange={(e) => setIsChecked(e.target.checked)}
-          />
-          <span
-            id="foo"
-            className={err && !checked ? style.notChecked : ""}
-          ></span>
-          <label htmlFor="Large">Large tour group</label>
+          <div className={style.par}>
+            <input
+              type="radio"
+              name="tour"
+              id="small"
+              onChange={(e) => setIsChecked(e.target.checked)}
+            />
+            <span className={err && !checked ? style.notChecked : ""}></span>
+            <label htmlFor="small">Small tour group</label>
+          </div>
+          <div className={style.par}>
+            <input
+              type="radio"
+              name="tour"
+              id="Large"
+              onChange={(e) => setIsChecked(e.target.checked)}
+            />
+            <span className={err && !checked ? style.notChecked : ""}></span>
+            <label htmlFor="Large">Large tour group</label>
+          </div>
         </div>
 
         <Button type="submit">Next step</Button>
