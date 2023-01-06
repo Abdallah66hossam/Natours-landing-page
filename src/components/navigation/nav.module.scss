@@ -35,6 +35,9 @@
     width: 4.5rem;
     height: 4.5rem;
     padding: 1rem;
+    @include query.respond(desktop) {
+      top: 5.75rem;
+    }
     @include query.respond(tab) {
       top: 6rem;
       right: 6rem;

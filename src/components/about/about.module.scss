@@ -110,7 +110,7 @@
           max-width: 20rem;
         }
         @include query.respond(phone) {
-          max-width: 14rem;
+          max-width: 10rem;
         }
       }
       .img__flex {
@@ -122,7 +122,7 @@
             top: 2rem;
           }
           @include query.respond(phone) {
-            top: -2rem;
+            top: -1.4rem;
           }
         }
       }
@@ -131,7 +131,7 @@
         top: -8rem;
         z-index: 25;
         @include query.respond(phone) {
-          top: -6rem;
+          top: -5rem;
         }
       }
       & img:hover {
