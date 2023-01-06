@@ -38,7 +38,7 @@ const Model = (props) => {
                 aliquet nec ullamcorper sit amet risus nullam eget. Nam libero
                 justo laoreet sit. Amet massa vitae tortor condimentum lacinia
                 quis vel eros donec. Sit amet facilisis magna etiam. Imperdiet
-                sed euismod nisi porta.
+                sed euismod ed.
               </p>
             </div>
             <Button>book now</Button>

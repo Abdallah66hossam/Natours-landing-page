@@ -1,4 +1,5 @@
 @use "../../main.scss" as heading;
+@use "../../responsive/media" as query;
 
 .background {
   background-color: rgba(0, 0, 0, 0.4);
@@ -25,6 +26,9 @@
   z-index: 10000000;
   border-radius: 0.4rem;
   overflow: hidden;
+  @include query.respond(desktop) {
+    width: 90%;
+  }
   & .close {
     position: absolute;
     right: 4rem;
@@ -36,23 +40,48 @@
       color: #55c57a;
       cursor: pointer;
     }
+    @include query.respond(tab) {
+      right: 2rem;
+      top: 2rem;
+      font-size: 2rem;
+    }
   }
   & .imgs {
     display: flex;
     flex-direction: column;
     & img {
-      height: 29rem;
+      height: 27rem;
       object-fit: cover;
     }
   }
   & .text {
     padding: 6rem 3rem 0 0;
     line-height: 1.7;
+    @include query.respond(tab) {
+      padding: 3rem 1.5rem 0 0;
+      line-height: 1.2;
+    }
+    @include query.respond(phone) {
+      padding: 3rem 1.5rem 0 0;
+      line-height: 1;
+    }
     & h2 {
       @include heading.heading;
+      @include query.respond(tab) {
+        font-size: 2.3rem;
+      }
+      @include query.respond(phone) {
+        font-size: 1.7rem;
+      }
     }
     & h3 {
       font-size: 2rem;
+      @include query.respond(tab) {
+        font-size: 1.5rem;
+      }
+      @include query.respond(phone) {
+        font-size: 1rem;
+      }
     }
     & .details {
       display: flex;
@@ -60,11 +89,22 @@
       & p {
         margin-top: 2rem;
         font-size: 1.3rem;
+        @include query.respond(desktop) {
+          font-size: 1.1rem;
+        }
+        @include query.respond(tab) {
+          font-size: 0.9rem;
+        }
         &:first-child {
           border-right: 0.1rem solid #ddd;
           margin-right: 4.2rem;
           padding-right: 2.1rem;
           height: fit-content;
+          @include query.respond(tab) {
+            font-size: 0.9rem;
+            margin-right: 2.2rem;
+            padding-right: 1.1rem;
+          }
         }
       }
       & + * {
